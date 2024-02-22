@@ -115,3 +115,24 @@ header span {
   text-align: center;
   padding-bottom: 10px;
 }
+
+#button{
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  padding:10px ;
+  background-color: #d621d6;
+  border: 1px solid #d621d6;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#main hr{
+  margin-bottom: 10px;
+  margin-top: 18px;
+  padding: 1px;
+  width: 70px;
+  background-color: #333;
+}
