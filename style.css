@@ -16,3 +16,8 @@ header p {
   font-family: poppins, sans-serif;
 }
 
+header img {
+  height: 50px;
+  width: 80px;
+  cursor: pointer;
+}
