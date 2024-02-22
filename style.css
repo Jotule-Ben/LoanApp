@@ -39,3 +39,9 @@ header span {
   padding-left: 8px;
 }
 
+
+#details div{
+  max-width: 800px;
+  padding-bottom: 40px;
+  line-height: 2;
+}
