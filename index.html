@@ -26,49 +26,59 @@
     </header>
 
     <main id="main">
-       <div id="monthlycalc">
+      <div id="monthlycalc">
         <p>Hey, Let's calculate your Monthly earnings...</p>
       </div>
 
-<div id="details">
+      <div id="details">
+        <div id="curbalance">
+          <p>Account Balance</p>
+          <input type="text" />
+        </div>
 
-      <div id="curbalance">
-        <p>Account Balance</p>
-        <input type="text"/>
+        <div id="lastdeposit">
+          <p>Date of Previous Deposit</p>
+          <input type="text" />
+        </div>
+
+        <div id="lastloan">
+          <p>Previous Loan date</p>
+          <input type="text" />
+        </div>
+
+        <div id="repay-period">
+          <p>Loan Tenure</p>
+          <input type="text" />
+        </div>
+
+        <div id="acctype">
+          <p>Account type</p>
+          <input type="text" />
+        </div>
+
+        <div id="amount">
+          <p>Loan Amount</p>
+          <input type="text" />
+        </div>
       </div>
-
-      <div id="lastdeposit">
-        <p>Date of Previous Deposit</p>
-        <input type="text"/>
-      </div>
-
-      <div id="lastloan">
-        <p>Previous Loan date</p>
-        <input type="text"/>
-      </div>
-
-      <div id="repay-period">
-        <p>Loan Tenure</p>
-        <input type="text" />
-      </div>
-
-      <div id="acctype">
-        <p>Account type</p>
-        <input type="text"/>
-      </div>
-
-      <div id="amount">
-        <p>Loan Amount</p>
-        <input type="text"/>
-      </div>
-
-</div>
 
       <h5>Apply now and avail FREE Insurance</h5>
 
       <button id="button">Apply now</button>
-      <hr>
+      <hr />
     </main>
+
+    <div id="successful">
+      <img src="./Assets/success.png" alt="" />
+      <h4>Thanks, your application has been recieved.</h4>
+
+      <p>
+        Your application will be processed within 3 working days, and you will
+        recieve a confirmation message on your mobile phone.
+      </p>
+
+      <hr />
+    </div>
   </body>
   <script src="./script.js"></script>
 </html>

@@ -39,21 +39,20 @@ header span {
   padding-left: 8px;
 }
 
-
-#details div{
+#details div {
   max-width: 800px;
   padding-bottom: 40px;
   line-height: 2;
 }
 
-#main input{
+#main input {
   background-color: #ef3eef;
   font-size: 20px;
   color: #fff;
   padding: 18px;
   border: 1px solid #ef3eef;
   border-radius: 5px;
-  width:700px;
+  width: 700px;
 }
 
 #monthlycalc {
@@ -62,74 +61,103 @@ header span {
   padding-bottom: 30px;
 }
 
-#curbalance{
+#curbalance {
   background-color: #f2edf4;
   padding: 10px;
   padding-top: 30px;
   border-radius: 10px;
 }
 
-#lastdeposit{
+#lastdeposit {
   background-color: #f2edf4;
-  margin-top: 30px; 
+  margin-top: 30px;
   padding: 10px;
   padding-top: 30px;
   border-radius: 10px;
 }
 
-#lastloan{
+#lastloan {
   background-color: #f2edf4;
-  margin-top: 30px; 
+  margin-top: 30px;
   padding: 10px;
   padding-top: 30px;
   border-radius: 10px;
 }
 
-#repay-period{
+#repay-period {
   background-color: #f2edf4;
-  margin-top: 30px; 
+  margin-top: 30px;
   padding: 10px;
   padding-top: 30px;
   border-radius: 10px;
 }
 
-#acctype{
+#acctype {
   background-color: #f2edf4;
-  margin-top: 30px; 
+  margin-top: 30px;
   padding: 10px;
   padding-top: 30px;
   border-radius: 10px;
 }
 
-#amount{
+#amount {
   background-color: #f2edf4;
-  margin-top: 30px; 
-  margin-bottom: 30px; 
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 10px;
   padding-top: 30px;
   border-radius: 10px;
 }
 
-#main h5{
+#main h5 {
   font-size: 15px;
   text-align: center;
   padding-bottom: 10px;
 }
 
-#button{
+#button {
   font-size: 18px;
   color: #fff;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
-  padding:10px ;
+  padding: 10px;
   background-color: #d621d6;
   border: 1px solid #d621d6;
   border-radius: 50px;
   cursor: pointer;
 }
 
-#main hr{
+#main hr {
+  margin-bottom: 10px;
+  margin-top: 18px;
+  padding: 1px;
+  width: 70px;
+  background-color: #333;
+}
+
+#successful img{
+  height: 100px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+#successful h4{
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#successful p{
+  font-size: 18px;
+  text-align: center;
+  padding:2px  180px;
+}
+
+
+
+#successful hr {
   margin-bottom: 10px;
   margin-top: 18px;
   padding: 1px;
