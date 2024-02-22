@@ -62,3 +62,50 @@ header span {
   padding-bottom: 30px;
 }
 
+#curbalance{
+  background-color: #f2edf4;
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+#lastdeposit{
+  background-color: #f2edf4;
+  margin-top: 30px; 
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+#lastloan{
+  background-color: #f2edf4;
+  margin-top: 30px; 
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+#repay-period{
+  background-color: #f2edf4;
+  margin-top: 30px; 
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+#acctype{
+  background-color: #f2edf4;
+  margin-top: 30px; 
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+
+#amount{
+  background-color: #f2edf4;
+  margin-top: 30px; 
+  margin-bottom: 30px; 
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
