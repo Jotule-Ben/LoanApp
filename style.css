@@ -21,3 +21,20 @@ header img {
   width: 80px;
   cursor: pointer;
 }
+
+#form input {
+  font-size: 15px;
+  width: 100px;
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  text-align: center;
+  background-color: #fff;
+}
+
+header span {
+  font-size: 20px;
+  cursor: pointer;
+  padding-left: 8px;
+}
