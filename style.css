@@ -45,3 +45,20 @@ header span {
   padding-bottom: 40px;
   line-height: 2;
 }
+
+#main input{
+  background-color: #ef3eef;
+  font-size: 20px;
+  color: #fff;
+  padding: 18px;
+  border: 1px solid #ef3eef;
+  border-radius: 5px;
+  width:700px;
+}
+
+#monthlycalc {
+  font-size: 20px;
+  font-family: poppins, sans-serif;
+  padding-bottom: 30px;
+}
+
