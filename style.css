@@ -109,3 +109,9 @@ header span {
   padding-top: 30px;
   border-radius: 10px;
 }
+
+#main h5{
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 10px;
+}
