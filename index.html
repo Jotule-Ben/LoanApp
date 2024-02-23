@@ -7,7 +7,7 @@
     <title>Loan Application</title>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div id="logo">
         <img src="./Assets/Bank-logo.png" alt="Logo" />
       </div>
@@ -18,12 +18,13 @@
 
       <div id="form">
         <form>
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Enter Pin" />
-          <span>&#8594;</span>
+          <input id="username" type="text" placeholder="Username" />
+
+          <input id="user_pin" type="password" placeholder="Enter Pin" />
+          <span id="btn">&#8594;</span>
         </form>
       </div>
-    </header>
+    </header> -->
 
     <main id="main">
       <div id="monthlycalc">
@@ -33,32 +34,32 @@
       <div id="details">
         <div id="curbalance">
           <p>Account Balance</p>
-          <input type="text" />
+          <input id="accbal" type="number" />
         </div>
 
         <div id="lastdeposit">
           <p>Date of Previous Deposit</p>
-          <input type="text" />
+          <input id="prevdepo" type="date" />
         </div>
 
         <div id="lastloan">
           <p>Previous Loan date</p>
-          <input type="text" />
+          <input id="prevloan" type="date" />
         </div>
 
         <div id="repay-period">
           <p>Loan Tenure</p>
-          <input type="text" />
+          <input id="loan_tenure" type="date" />
         </div>
 
         <div id="acctype">
           <p>Account type</p>
-          <input type="text" />
+          <input id="acc_type" type="text" />
         </div>
 
         <div id="amount">
           <p>Loan Amount</p>
-          <input type="text" />
+          <input id="loan_amount" type="number" />
         </div>
       </div>
 
@@ -68,7 +69,7 @@
       <hr />
     </main>
 
-    <div id="successful">
+    <!-- <div id="successful">
       <img src="./Assets/success.png" alt="" />
       <h4>Thanks, your application has been recieved.</h4>
 
@@ -78,7 +79,7 @@
       </p>
 
       <hr />
-    </div>
+    </div> -->
   </body>
   <script src="./script.js"></script>
 </html>

@@ -9,6 +9,7 @@ header {
   display: flex;
   align-items: center;
   padding: 50px;
+  /* opacity: 0; */
 }
 
 header p {
@@ -37,6 +38,11 @@ header span {
   font-size: 20px;
   cursor: pointer;
   padding-left: 8px;
+}
+
+#main{
+  /* opacity: 0; */
+  padding-top: 30px;
 }
 
 #details div {
@@ -135,6 +141,10 @@ header span {
   width: 70px;
   background-color: #333;
 }
+
+/* #successful{
+  opacity: 0;
+} */
 
 #successful img{
   height: 100px;
