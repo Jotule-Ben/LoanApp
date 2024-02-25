@@ -173,3 +173,20 @@ header span {
   width: 70px;
   background-color: #333;
 }
+
+#unsuccessful{
+  text-align: center;
+  line-height: 2;
+  margin: auto;
+  /* opacity: 0; */
+}
+
+#unsuccessful h2{
+ font-size: 30px;
+ color: red;
+}
+
+#unsuccessful p{
+ font-size: 20px;
+ color: red;
+}
