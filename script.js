@@ -8,7 +8,7 @@ let points = 30;
 const headElements = document.getElementById("header");
 const btn_login = document.getElementById("btn");
 const userName = document.getElementById("username");
-const password = parseInt(document.getElementById("user_pin"));
+const password = document.getElementById("user_pin");
 const mainContainer = document.getElementById("main");
 const user_balance = document.getElementById("accbal");
 const previous_deposit = document.getElementById("prevdepo");
@@ -20,32 +20,29 @@ const applyButton = document.getElementById("button");
 const approvedLoan = document.getElementById("successful");
 const unApproved = document.getElementById("unsuccessful");
 
-
 ////// (1.)
-   const percentOfIncome = Income => {
+const percentOfIncome = (Income) => {
   let amt = Income * 12;
   return amt * 0.45;
 };
 
 const totalIncome = percentOfIncome(monthlyIncome);
 
-const requiredLoanAmount =
-loanAmount.addEventListener("input", () =>{
-  console.log(parseInt(loanAmount.value))
-  if(loanAmount.value > totalIncome){
-    points +=10;
+const requiredLoanAmount = loanAmount.addEventListener("input", () => {
+  console.log(parseInt(loanAmount.value));
+  if (loanAmount.value > totalIncome) {
+    points += 10;
     console.log("You got it!");
-  } else{
-    points -=10;
+  } else {
+    points -= 10;
     console.log("You loosed it!");
-  }}
-);
+  }
+});
 
 // console.log(parseInt(requiredLoanAmount)); --eventhandler
 
-
 // const requiredLoanAmount =
-// loanAmount.addEventListener("input", 
+// loanAmount.addEventListener("input",
 
 //  function (Income) {
 //   let amt = Income * 12;
@@ -74,7 +71,6 @@ const currBalance = user_balance.addEventListener("input", () =>{
 // console.log(currBalance);
 
 */
-
 
 ///////// (3).
 previous_deposit.addEventListener("input", () => {
@@ -132,47 +128,56 @@ loanTenure.addEventListener("input", () => {
   }
 });
 
-
 ///////// (6.)
-acc__type.addEventListener('input', () =>{
-if (acc__type.value === accountType) {
- points +=10; 
-  console.log("acc__typecurrent");
-} else {
-  points += 5;
-  console.log("acc__typesavings");
-}
-console.log(acc__type.value);
-}
-)
+acc__type.addEventListener("input", () => {
+  if (acc__type.value === accountType) {
+    points += 10;
+    console.log("acc__typecurrent");
+  } else {
+    points += 5;
+    console.log("acc__typesavings");
+  }
+  console.log(acc__type.value);
+});
 
+//////////////////////////////////////////////
+const login = function () {
+  userName.addEventListener("input", () => console.log(userName.value));
+  password.addEventListener("input", () =>
+    console.log(parseInt(password.value))
+  );
+};
+
+login();
 
 // login;
 btn_login.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(userName);
+  if (login === user && login === password) {
+    // console.log(userName);
 
-  // console.log("LOGIN");
-
+    console.log("LOGIN");
+  } else {
+    console.log("SORRY U CAN'T LOGIN!");
+  }
   // headElements.style.opacity = 0;
   // mainContainer.style.opacity = 100;
   // approvedLoan.style.opacity = 0;
 });
 
-
 // application;
 applyButton.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if(points >= 30){
-      headElements.style.opacity = 0;
-      mainContainer.style.display = "none";
-      approvedLoan.style.opacity = 100;
-  }else{
-    headElements.style.display = "none"
-      unApproved.style.opacity = 100;
-      mainContainer.style.display = "none";
-      approvedLoan.style.opacity = 0;
+  if (points >= 30) {
+    headElements.style.opacity = 0;
+    mainContainer.style.display = "none";
+    approvedLoan.style.opacity = 100;
+  } else {
+    headElements.style.display = "none";
+    unApproved.style.opacity = 100;
+    mainContainer.style.display = "none";
+    approvedLoan.style.opacity = 0;
   }
 
   console.log("Approved");
