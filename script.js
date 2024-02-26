@@ -2,6 +2,7 @@ const headElements = document.getElementById("header");
 const btn_login = document.getElementById("btn");
 const userName = document.getElementById("username");
 const password = document.getElementById("user_pin");
+const wrongLoginDetails = document.getElementById("wronglogin");
 const mainContainer = document.getElementById("main");
 const previous_deposit = document.getElementById("prevdepo");
 const previous_loan = document.getElementById("prevloan");
@@ -114,7 +115,7 @@ function handleLoanFunction() {
     } else {
       headElements.style.display = "none";
       unApproved.style.opacity = 100;
-      mainContainer.style.display = "none";
+      mainContainer.style.display = "nscone";
       approvedLoan.style.opacity = 0;
     }
   }
@@ -128,7 +129,11 @@ btn_login.addEventListener("click", function (e) {
     mainContainer.style.opacity = 100;
     approvedLoan.style.opacity = 0;
   } else {
-    console.log("SORRY U CAN'T LOGIN!");
+    headElements.style.display = "none";
+    unApproved.style.opacity = 0;
+    mainContainer.style.display = "none";
+    approvedLoan.style.opacity = 0;
+    wrongLoginDetails.style.opacity = 100;
   }
 });
 
