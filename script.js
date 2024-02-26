@@ -115,7 +115,7 @@ function handleLoanFunction() {
     } else {
       headElements.style.display = "none";
       unApproved.style.opacity = 100;
-      mainContainer.style.display = "nscone";
+      mainContainer.style.display = "none";
       approvedLoan.style.opacity = 0;
     }
   }
