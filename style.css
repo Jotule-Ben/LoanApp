@@ -40,9 +40,9 @@ header span {
   padding-left: 8px;
 }
 
-/* #main{
+#main {
   opacity: 0;
-} */
+}
 
 #details div {
   max-width: 800px;
@@ -58,6 +58,10 @@ header span {
   border: 1px solid #ef3eef;
   border-radius: 5px;
   width: 700px;
+}
+
+#accbal::placeholder {
+  color: #fff;
 }
 
 #monthlycalc {
@@ -141,30 +145,28 @@ header span {
   background-color: #333;
 }
 
-/* #successful{
+#successful {
   opacity: 0;
-} */
+}
 
-#successful img{
+#successful img {
   height: 100px;
   width: 150px;
   display: flex;
   justify-content: center;
 }
 
-#successful h4{
+#successful h4 {
   text-align: center;
   font-size: 20px;
   padding: 10px;
 }
 
-#successful p{
+#successful p {
   font-size: 18px;
   text-align: center;
-  padding:2px  180px;
+  padding: 2px 180px;
 }
-
-
 
 #successful hr {
   margin-bottom: 10px;
@@ -174,19 +176,36 @@ header span {
   background-color: #333;
 }
 
-#unsuccessful{
+#unsuccessful {
   text-align: center;
   line-height: 2;
   margin: auto;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
-#unsuccessful h2{
- font-size: 30px;
- color: red;
+#unsuccessful h2 {
+  font-size: 30px;
+  color: red;
 }
 
-#unsuccessful p{
- font-size: 20px;
- color: red;
+#unsuccessful p {
+  font-size: 20px;
+  color: red;
+}
+
+#wronglogin {
+  text-align: center;
+  line-height: 2;
+  margin: auto;
+  opacity: 0;
+}
+
+#wronglogin h2 {
+  font-size: 30px;
+  color: red;
+}
+
+#wronglogin p {
+  font-size: 20px;
+  color: red;
 }

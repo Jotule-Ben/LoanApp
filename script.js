@@ -1,16 +1,8 @@
-const user = "Jhay";
-const pin = 1212;
-const monthlyIncome = 20000;
-const accountType = "current";
-let date = new Date(2024, 1, 21, 11, 40, 50);
-let points = 30;
-
 const headElements = document.getElementById("header");
 const btn_login = document.getElementById("btn");
 const userName = document.getElementById("username");
 const password = document.getElementById("user_pin");
 const mainContainer = document.getElementById("main");
-const user_balance = document.getElementById("accbal");
 const previous_deposit = document.getElementById("prevdepo");
 const previous_loan = document.getElementById("prevloan");
 const loanTenure = document.getElementById("loan_tenure");
@@ -20,7 +12,15 @@ const applyButton = document.getElementById("button");
 const approvedLoan = document.getElementById("successful");
 const unApproved = document.getElementById("unsuccessful");
 
-////// (1.)
+const user = "Jhay";
+const pin = 1212;
+const monthlyIncome = 20000;
+const accountType = "current";
+let date = new Date(2024, 1, 21, 11, 40, 50);
+let points = 30;
+let requiredLoanAmount = 0;
+let allDetailsFilled = false;
+
 const percentOfIncome = (Income) => {
   let amt = Income * 12;
   return amt * 0.45;
@@ -28,157 +28,113 @@ const percentOfIncome = (Income) => {
 
 const totalIncome = percentOfIncome(monthlyIncome);
 
-const requiredLoanAmount = loanAmount.addEventListener("input", () => {
-  console.log(parseInt(loanAmount.value));
-  if (loanAmount.value > totalIncome) {
-    points += 10;
-    console.log("You got it!");
-  } else {
-    points -= 10;
-    console.log("You loosed it!");
-  }
-});
+function handlePrevDate() {
+  previous_deposit.value === ""
+    ? (allDetailsFilled = false)
+    : (allDetailsFilled = true);
 
-// console.log(parseInt(requiredLoanAmount)); --eventhandler
-
-// const requiredLoanAmount =
-// loanAmount.addEventListener("input",
-
-//  function (Income) {
-//   let amt = Income * 12;
-//   return amt * 0.45;
-// };
-
-// () =>
-//   console.log(parseInt(loanAmount.value))
-// );
-// console.log(parseInt(requiredLoanAmount)); --eventhandler
-
-/*
-
-const currBalance = user_balance.addEventListener("input", () =>{
-  console.log(user_balance.value)
-  if((user_balance.value) > (loanAmount.value)){
-    points += 10;
-    console.log("GREAT");
-  }else{
-    points -=10;
-    console.log("BAD");
-  }
-}
-);
-
-// console.log(currBalance);
-
-*/
-
-///////// (3).
-previous_deposit.addEventListener("input", () => {
   const prevDate = new Date(previous_deposit.value);
-  console.log("Previous Date:", prevDate);
 
   const monthDiff =
     (date.getFullYear() - prevDate.getFullYear()) * 12 +
     (date.getMonth() - prevDate.getMonth());
-  console.log("Month Difference:", monthDiff);
 
-  if (monthDiff < 1) {
-    points += 5;
-    console.log("less than 1 month");
-  } else {
-    console.log("more than 1 month ago");
-  }
-});
+  if (monthDiff < 1) points += 5;
+}
 
-// console.log(points);
+function handlePrevLoan() {
+  handlePrevDate();
 
-/////// (4.)
-previous_loan.addEventListener("input", () => {
+  previous_loan.value === ""
+    ? (allDetailsFilled = false)
+    : (allDetailsFilled = true);
+
   const previousLoanDate = new Date(previous_loan.value);
-  console.log("Previous Date:", previousLoanDate);
 
-  const monthDiff =
+  const monthDiff2 =
     (date.getFullYear() - previousLoanDate.getFullYear()) * 12 +
     (date.getMonth() - previousLoanDate.getMonth());
-  console.log("Month Difference:", monthDiff);
 
-  if (monthDiff > 6) {
-    points += 10;
-    console.log("more than 6 months ago");
-  } else {
-    console.log("within 6 months ago");
-  }
-});
+  if (monthDiff2 > 6) points += 10;
+}
 
-/////// (5.)
-loanTenure.addEventListener("input", () => {
+function handlePaymentDate() {
+  handlePrevLoan();
+
+  loanTenure.value === ""
+    ? (allDetailsFilled = false)
+    : (allDetailsFilled = true);
+
   const paymentDate = new Date(loanTenure.value);
-  console.log("Previous Date:", paymentDate);
 
-  const monthDiff =
+  const monthDiff3 =
     (paymentDate.getFullYear() - date.getFullYear()) * 12 +
     (paymentDate.getMonth() - date.getMonth());
-  console.log("Month Difference:", monthDiff);
 
-  if (monthDiff > 6) {
-    // console.log((points += 5));
-    console.log("More than 6 months ago");
-  } else {
-    console.log("Within the last 6 months or in the future");
-  }
-});
+  if (monthDiff3 < 6) points += 5;
+}
 
-///////// (6.)
-acc__type.addEventListener("input", () => {
+function handleAccountType() {
+  handlePaymentDate();
+
+  acc__type.value === ""
+    ? (allDetailsFilled = false)
+    : (allDetailsFilled = true);
+
   if (acc__type.value === accountType) {
     points += 10;
-    console.log("acc__typecurrent");
   } else {
     points += 5;
-    console.log("acc__typesavings");
   }
-  console.log(acc__type.value);
-});
+}
 
-//////////////////////////////////////////////
-const login = function () {
-  userName.addEventListener("input", () => console.log(userName.value));
-  password.addEventListener("input", () =>
-    console.log(parseInt(password.value))
-  );
-};
+function handleRequiredLoan() {
+  handleAccountType();
 
-login();
+  loanAmount.value === ""
+    ? (allDetailsFilled = false)
+    : (allDetailsFilled = true);
+
+  requiredLoanAmount = parseInt(loanAmount.value);
+  if (requiredLoanAmount > totalIncome) {
+    points -= 10;
+  } else {
+    points += 10;
+  }
+}
+
+function handleLoanFunction() {
+  handleRequiredLoan();
+
+  if (allDetailsFilled) {
+    if (points >= 30) {
+      headElements.style.opacity = 0;
+      mainContainer.style.display = "none";
+      approvedLoan.style.opacity = 100;
+    } else {
+      headElements.style.display = "none";
+      unApproved.style.opacity = 100;
+      mainContainer.style.display = "none";
+      approvedLoan.style.opacity = 0;
+    }
+  }
+}
 
 // login;
 btn_login.addEventListener("click", function (e) {
   e.preventDefault();
-  if (login === user && login === password) {
-    // console.log(userName);
-
-    console.log("LOGIN");
+  if (userName.value === user && parseInt(password.value) === pin) {
+    headElements.style.opacity = 0;
+    mainContainer.style.opacity = 100;
+    approvedLoan.style.opacity = 0;
   } else {
     console.log("SORRY U CAN'T LOGIN!");
   }
-  // headElements.style.opacity = 0;
-  // mainContainer.style.opacity = 100;
-  // approvedLoan.style.opacity = 0;
 });
 
 // application;
 applyButton.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (points >= 30) {
-    headElements.style.opacity = 0;
-    mainContainer.style.display = "none";
-    approvedLoan.style.opacity = 100;
-  } else {
-    headElements.style.display = "none";
-    unApproved.style.opacity = 100;
-    mainContainer.style.display = "none";
-    approvedLoan.style.opacity = 0;
-  }
-
-  console.log("Approved");
+  handleLoanFunction();
 });
