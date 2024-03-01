@@ -209,3 +209,20 @@ header span {
   font-size: 20px;
   color: red;
 }
+
+#unApproved {
+  text-align: center;
+  line-height: 2;
+  margin: auto;
+  opacity: 0;
+}
+
+#unApproved h2 {
+  font-size: 30px;
+  color: red;
+}
+
+#unApproved p {
+  font-size: 20px;
+  color: red;
+}

@@ -11,12 +11,13 @@ const acc__type = document.getElementById("acc_type");
 const loanAmount = document.getElementById("loan_amount");
 const applyButton = document.getElementById("button");
 const approvedLoan = document.getElementById("successful");
-const unApproved = document.getElementById("unsuccessful");
+const unApproved = document.getElementById("unApproved");
 
 const user = "Jhay";
 const pin = 1212;
 const monthlyIncome = 20000;
-const accountType = "current";
+const accountType = "Current";
+const accountType2 = "Savings";
 let date = new Date(2024, 1, 21, 11, 40, 50);
 let points = 30;
 let requiredLoanAmount = 0;
@@ -84,8 +85,10 @@ function handleAccountType() {
 
   if (acc__type.value === accountType) {
     points += 10;
-  } else {
+  } else if (acc__type.value === accountType2) {
     points += 5;
+  }else{
+    acc__type = ""
   }
 }
 
@@ -116,7 +119,7 @@ function handleLoanFunction() {
       headElements.style.display = "none";
       unApproved.style.opacity = 100;
       mainContainer.style.display = "none";
-      approvedLoan.style.opacity = 0;
+      approvedLoan.style.display = "none";
     }
   }
 }
